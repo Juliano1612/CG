@@ -1,18 +1,18 @@
 package com.Juliano1612.cadeira.algebra;
 
-/**
- * Created by manna on 30/05/17.
- */
-public abstract class Transformation2D {
+public class Transformation2D {
 
     /* x'   1 0 dx
     *  y' = 0 1 dy * Mobj
     *  w'   0 0 1
     */
-    public Double[][] translateFigure(Double[][] mF, Double dx, Double dy) {
+    public Float[][] translateFigure(Float[][] mF, Float dx, Float dy) {
         Utilities utilities = new Utilities();
-        Double[][] mTranslation = utilities.createMatrixTranslation(dx, dy);
-        mTranslation = utilities.matrixMultiplication(mTranslation, mF);
+        Float[][] mTranslationOrigin = utilities.createMatrixTranslateToOrigin(mF[0][0], mF[1][0]);
+        Float[][] mTranslation = utilities.createMatrixTranslation(dx, dy);
+        mTranslationOrigin = utilities.matrixMultiplication(mTranslationOrigin, mF);
+        mTranslation = utilities.matrixMultiplication(mTranslation, mTranslationOrigin);
+        new Utilities().printMatrix(mTranslation);
         return mTranslation;
     }
 
@@ -20,11 +20,11 @@ public abstract class Transformation2D {
     *  y' = 0 1 dy * sinY  cosT 0 * 0 1 -dy * Mobj
     *  w'   0 0 1      0    0   1   0 0  1
     */
-    public Double[][] rotateFigure(Double[][] mF, Double theta, Double dx, Double dy) {
+    public Float[][] rotateFigure(Float[][] mF, Float theta) {
         Utilities utilities = new Utilities();
-        Double[][] mTranslationOrigin = utilities.createMatrixTranslateToOrigin(dx, dy);
-        Double[][] mTranslation = utilities.createMatrixTranslation(dx, dy);
-        Double[][] mRotation = utilities.createMatrixRotation(theta);
+        Float[][] mTranslationOrigin = utilities.createMatrixTranslateToOrigin(mF[0][0], mF[1][0]);
+        Float[][] mTranslation = utilities.createMatrixTranslation(mF[0][0], mF[1][0]);
+        Float[][] mRotation = utilities.createMatrixRotation(theta);
 
         mTranslationOrigin = utilities.matrixMultiplication(mTranslationOrigin, mF);
         mRotation = utilities.matrixMultiplication(mRotation, mTranslationOrigin);
@@ -37,12 +37,12 @@ public abstract class Transformation2D {
     *  y' = 0 1 dy * 0  sy 0 * 0 1 -dy * Mobj
     *  w'   0 0 1    0  0  1   0 0  1
     */
-    public Double[][] scaleFigure(Double[][] mF, Double sx, Double sy, Double dx, Double dy) {
+    public Float[][] scaleFigure(Float[][] mF, Float sx, Float sy) {
         Utilities utilities = new Utilities();
 
-        Double[][] mTranslationOrigin = utilities.createMatrixTranslateToOrigin(dx, dy);
-        Double[][] mTranslation = utilities.createMatrixTranslation(dx, dy);
-        Double[][] mScale = utilities.createMatrixScale(sx, sy);
+        Float[][] mTranslationOrigin = utilities.createMatrixTranslateToOrigin(mF[0][0], mF[1][0]);
+        Float[][] mTranslation = utilities.createMatrixTranslation(mF[0][0], mF[1][0]);
+        Float[][] mScale = utilities.createMatrixScale(sx, sy);
 
         mTranslationOrigin = utilities.matrixMultiplication(mTranslationOrigin, mF);
         mScale = utilities.matrixMultiplication(mScale, mTranslationOrigin);

@@ -1,34 +1,28 @@
 package com.Juliano1612.cadeira;
 
+import com.Juliano1612.cadeira.algebra.Transformation2D;
 import com.Juliano1612.cadeira.algebra.Utilities;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
-import java.awt.*;
-import java.awt.event.KeyListener;
-import java.awt.geom.Area;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class CADeira extends ApplicationAdapter implements ApplicationListener {
+public class CiCADa extends ApplicationAdapter implements ApplicationListener {
     SpriteBatch batch;
     Texture img;
 
@@ -39,12 +33,15 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
     Float[][] coordinates;
     ArrayList<Float[][]> objects = new ArrayList<Float[][]>();
 
+    Float relX, relY, theta;
+    int transformationSelected, objectToTransform;
+
     ShapeRenderer renderer;
 
     ArrayList<Vector2> line = new ArrayList<Vector2>();
 
     boolean dLine = false, dCircle = false, dTriangle = false, dSquare = false;
-    boolean dTerminal = false, dDeleting = false;
+    boolean dTerminal = false, dDeleting = false, dSelectingObject = false, dSelectingTransformation = false, dTransforming = false;
 
     int contaPos = 0;
 
@@ -54,7 +51,7 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
     @Override
     public void create() {
         font = new BitmapFont();
-        font.setColor(0, 0, 0, 1);
+        font.setColor(1, 1, 1, 1);
         renderer = new ShapeRenderer();
         text = "";
         terminalCommand = "";
@@ -97,15 +94,33 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
         stage.addListener(new ClickListener(Input.Buttons.LEFT) {
             @Override
             public void clicked(InputEvent evt, float x, float y) {
+                if (dTransforming && transformationSelected == 0) {
+
+                    relX = x;
+                    relY = y;
+
+                    Float[][] objTmp = new Transformation2D().translateFigure(objects.get(objectToTransform), relX, relY);
+                    objects.remove(objectToTransform);
+                    objects.add(objTmp);
+
+                    transformationSelected = -1;
+                    dTransforming = false;
+                    terminalCommand = "";
+                    text = "";
+                    dTerminal = false;
+                }
                 if (dLine && contaPos < 2) {
                     coordinates[0][contaPos] = x;
                     coordinates[1][contaPos] = y;
+
                     contaPos++;
                     if (contaPos == 2) {
                         dLine = false;
                         for (int i = 0; i < 2; i++) {
                             System.out.println("Vertice [" + coordinates[0][i] + "][" + coordinates[1][i] + "]");
                         }
+                        coordinates[2][0] = 1f;
+                        coordinates[2][1] = 1f;
                         objects.add(coordinates);
                         contaPos = 0;
                     }
@@ -118,6 +133,9 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
                         for (int i = 0; i < 3; i++) {
                             System.out.println("Vertice [" + coordinates[0][i] + "][" + coordinates[1][i] + "]");
                         }
+                        coordinates[2][0] = 1f;
+                        coordinates[2][1] = 1f;
+                        coordinates[2][2] = 1f;
                         objects.add(coordinates);
                         contaPos = 0;
                     }
@@ -130,6 +148,11 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
                         for (int i = 0; i < 4; i++) {
                             System.out.println("Vertice [" + coordinates[0][i] + "][" + coordinates[1][i] + "]");
                         }
+                        coordinates[2][0] = 1f;
+                        coordinates[2][1] = 1f;
+                        coordinates[2][2] = 1f;
+                        coordinates[2][3] = 1f;
+
                         objects.add(coordinates);
                         contaPos = 0;
                     }
@@ -155,15 +178,10 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
 
     }
 
-
-    public void myObjects() {
-        for (Float[][] f : objects) {
-            System.out.println("Tem um desenho!");
-        }
-        System.out.println("\tTotal de " + objects.size() + " figuras desenhadas");
-    }
-
     public void resetDFlags() {
+        dTransforming = false;
+        dSelectingTransformation = false;
+        dSelectingObject = false;
         dDeleting = false;
         dLine = false;
         dCircle = false;
@@ -171,10 +189,12 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
         dTriangle = false;
         contaPos = 0;
         coordinates = null;
+        objectToTransform = -1;
+        transformationSelected = -1;
     }
 
-    public String deletingMessage() {
-        String msg = "Digite o número do objeto que deseja excluir:";
+    public String listMessage() {
+        String msg = "";
 
         for (int i = 0; i < objects.size(); i++) {
             switch (objects.get(i)[0].length) {
@@ -201,13 +221,24 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
     public void verifyInputs() {
 
 
-        if (Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT)) {
-            if (Gdx.input.isKeyPressed(Input.Keys.BACKSPACE)) {
-                objects = new ArrayList<Float[][]>();
-            }
-        }
-
         if (!dTerminal) {
+            if (Gdx.input.isKeyPressed(Input.Keys.T)) {
+                if (objects.size() == 0) {
+                    terminalCommand = "Não há nada para ser transformado! Press ESC ";
+
+                } else {
+                    terminalCommand = "Selecione o objeto para a transformação: ";
+                    terminalCommand += listMessage();
+                    dSelectingObject = true;
+                }
+                text = "";
+                dTerminal = true;
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT)) {
+                if (Gdx.input.isKeyPressed(Input.Keys.BACKSPACE)) {
+                    objects = new ArrayList<Float[][]>();
+                }
+            }
             if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
                 terminalCommand = "Digite o que deseja : ";
                 text = "";
@@ -219,7 +250,8 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
                     terminalCommand = "Não há nada para ser apagado! Press ESC ";
 
                 } else {
-                    terminalCommand = deletingMessage();
+                    terminalCommand = "Selecione o objeto a ser removido:";
+                    terminalCommand += listMessage();
                     dDeleting = true;
                 }
                 text = "";
@@ -230,45 +262,110 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
                 resetDFlags();
             }
 
-            if (Gdx.input.isKeyJustPressed((Input.Keys.O))) {
-                myObjects();
-            }
-
             if (!(dLine || dCircle || dSquare || dTriangle)) {
                 if (Gdx.input.isKeyJustPressed(Input.Keys.F1)) {
                     System.out.println("L was pressed. Lets draw a line");
                     dLine = true;
-                    coordinates = new Float[2][2];
+                    coordinates = new Float[3][2];
                 } else if (Gdx.input.isKeyJustPressed(Input.Keys.F4)) {
                     System.out.println("S was pressed. Lets draw a square");
                     dSquare = true;
-                    coordinates = new Float[2][4];
+                    coordinates = new Float[3][4];
                 } else if (Gdx.input.isKeyJustPressed(Input.Keys.F2)) {
                     System.out.println("C was pressed. Lets draw a circle");
                     dCircle = true;
-                    coordinates = new Float[2][2];
+                    coordinates = new Float[3][2];
                 } else if (Gdx.input.isKeyJustPressed(Input.Keys.F3)) {
                     System.out.println("T was pressed. Lets draw a triangle");
                     dTriangle = true;
-                    coordinates = new Float[2][3];
+                    coordinates = new Float[3][3];
                 }
             }
         } else {
             if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
                 dTerminal = false;
                 text = "";
-                if (dLine || dCircle || dSquare || dTriangle || dDeleting) {
-                    resetDFlags();
-                }
+                resetDFlags();
             }
             if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
                 System.out.println("Capturei : " + text);
+                if (dTransforming) {
+                    dTransforming = false;
+                    StringTokenizer tokenizer;
+                    Float[][] objTmp;
+                    switch (transformationSelected) {
+                        case 0:
+                            tokenizer = new StringTokenizer(text);
+                            relX = Float.parseFloat(tokenizer.nextToken().trim());
+                            relY = Float.parseFloat(tokenizer.nextToken().trim());
+                            objTmp = new Transformation2D().translateFigure(objects.get(objectToTransform), relX, relY);
+                            objects.remove(objectToTransform);
+                            objects.add(objTmp);
 
-                if(dDeleting){
-                    int pos = Integer.parseInt(text);
-                    System.out.println("pos" + pos);
-                    objects.remove(pos);
-                }else{
+                            transformationSelected = -1;
+                            terminalCommand = "";
+                            text = "";
+                            dTerminal = false;
+                            break;
+                        case 1:
+                            tokenizer = new StringTokenizer(text);
+                            relX = Float.parseFloat(tokenizer.nextToken());
+                            relY = Float.parseFloat(tokenizer.nextToken());
+                            objTmp = new Transformation2D().scaleFigure(objects.get(objectToTransform), relX, relY);
+                            objects.remove(objectToTransform);
+                            objects.add(objTmp);
+
+                            transformationSelected = -1;
+                            terminalCommand = "";
+                            text = "";
+                            dTerminal = false;
+                            break;
+                        case 2:
+                            theta = Float.parseFloat(text.trim());
+                            objTmp = new Transformation2D().rotateFigure(objects.get(objectToTransform), theta);
+                            objects.remove(objectToTransform);
+                            objects.add(objTmp);
+
+                            transformationSelected = -1;
+                            terminalCommand = "";
+                            text = "";
+                            dTerminal = false;
+                            break;
+                    }
+                } else if (dSelectingTransformation) {
+                    dSelectingTransformation = false;
+                    dTransforming = true;
+                    transformationSelected = Integer.parseInt(text.trim());
+                    switch (transformationSelected) {
+                        case 0:
+                            terminalCommand = "Escreva um ponto ou clique na tela para a translação\n";
+                            text = "";
+                            break;
+                        case 1:
+                            terminalCommand = "Escreva o valor em relação a X e em relação a Y\n";
+                            text = "";
+                            break;
+                        case 2:
+                            terminalCommand = "Escreva o ângulo desejado para a rotação\n";
+                            text = "";
+                            break;
+                    }
+                } else if (dSelectingObject) {
+                    objectToTransform = Integer.parseInt(text.trim());
+                    dSelectingTransformation = true;
+                    dSelectingObject = false;
+                    terminalCommand = "Selecione a transformação desejada:\n";
+                    terminalCommand += "[0] - Translação\n";
+                    terminalCommand += "[1] - Mudança de Escala\n";
+                    terminalCommand += "[2] - Rotação\n";
+                    text = "";
+                }
+                if (dDeleting) {
+                    objects.remove(Integer.parseInt(text.trim()));
+                    resetDFlags();
+                    dTerminal = false;
+
+                } else {
 
                     StringTokenizer tokenizer = new StringTokenizer(text);
                     if (dLine) {
@@ -276,13 +373,20 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
                         coordinates[1][0] = Float.valueOf(tokenizer.nextToken());
                         coordinates[0][1] = Float.valueOf(tokenizer.nextToken());
                         coordinates[1][1] = Float.valueOf(tokenizer.nextToken());
+                        coordinates[2][0] = 1f;
+                        coordinates[2][1] = 1f;
                         objects.add(coordinates);
+                        resetDFlags();
+                        dTerminal = false;
+
                     } else if (dCircle) {
                         coordinates[0][0] = Float.valueOf(tokenizer.nextToken());
                         coordinates[1][0] = Float.valueOf(tokenizer.nextToken());
                         coordinates[0][1] = Float.valueOf(tokenizer.nextToken());
                         coordinates[1][1] = Float.NEGATIVE_INFINITY;
                         objects.add(coordinates);
+                        resetDFlags();
+                        dTerminal = false;
 
                     } else if (dSquare) {
                         coordinates[0][0] = Float.valueOf(tokenizer.nextToken());
@@ -293,7 +397,13 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
                         coordinates[1][2] = Float.valueOf(tokenizer.nextToken());
                         coordinates[0][3] = Float.valueOf(tokenizer.nextToken());
                         coordinates[1][3] = Float.valueOf(tokenizer.nextToken());
+                        coordinates[2][0] = 1f;
+                        coordinates[2][1] = 1f;
+                        coordinates[2][2] = 1f;
+                        coordinates[2][3] = 1f;
                         objects.add(coordinates);
+                        resetDFlags();
+                        dTerminal = false;
 
                     } else if (dTriangle) {
                         coordinates[0][0] = Float.valueOf(tokenizer.nextToken());
@@ -302,11 +412,16 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
                         coordinates[1][1] = Float.valueOf(tokenizer.nextToken());
                         coordinates[0][2] = Float.valueOf(tokenizer.nextToken());
                         coordinates[1][2] = Float.valueOf(tokenizer.nextToken());
+                        coordinates[2][0] = 1f;
+                        coordinates[2][1] = 1f;
+                        coordinates[2][2] = 1f;
                         objects.add(coordinates);
+                        resetDFlags();
+                        dTerminal = false;
+
+
                     }
                 }
-                resetDFlags();
-                dTerminal = false;
                 text = "";
             }
             if (dLine) {
@@ -346,7 +461,7 @@ public class CADeira extends ApplicationAdapter implements ApplicationListener {
 
     @Override
     public void render() {
-        Gdx.gl.glClearColor(1, 1, 1, 1);
+        Gdx.gl.glClearColor(0, 0, 0, 0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);//limpa buffer com cor limpa
 
         verifyInputs();

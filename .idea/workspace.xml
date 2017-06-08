@@ -2,26 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7b18d91-dde7-4f2c-aa07-862a3ed768ce" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/w4ll3/cadeira/CADeira$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/w4ll3/cadeira/CADeira.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/w4ll3/cadeira/algebra/Circle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/w4ll3/cadeira/algebra/Line.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/w4ll3/cadeira/algebra/Rectangle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/w4ll3/cadeira/algebra/Transformation2D.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/w4ll3/cadeira/algebra/Triangle.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/w4ll3/cadeira/algebra/Utilities.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/desktop/build/classes/main/com/w4ll3/cadeira/desktop/DesktopLauncher.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/w4ll3/cadeira/CADeira.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CADeira.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/w4ll3/cadeira/algebra/Circle.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Circle.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/w4ll3/cadeira/algebra/Line.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Line.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/w4ll3/cadeira/algebra/Rectangle.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Rectangle.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/w4ll3/cadeira/algebra/Transformation2D.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Transformation2D.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/w4ll3/cadeira/algebra/Triangle.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Triangle.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/w4ll3/cadeira/algebra/Utilities.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/desktop/src/com/w4ll3/cadeira/desktop/DesktopLauncher.java" afterPath="$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/CADeira$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/CADeira$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/CADeira.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CADeira.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Transformation2D.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Transformation2D.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Utilities.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Utilities.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/build/classes/main/com/Juliano1612/cadeira/desktop/DesktopLauncher.class" afterPath="$PROJECT_DIR$/desktop/build/classes/main/com/Juliano1612/cadeira/desktop/DesktopLauncher.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/build.gradle" afterPath="$PROJECT_DIR$/desktop/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Transformation2D.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Transformation2D.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java" afterPath="$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java" />
     </list>
     <ignored path="$PROJECT_DIR$/core/.gradle/" />
     <ignored path="$PROJECT_DIR$/core/build/" />
@@ -124,22 +121,34 @@
       <file leaf-file-name="Utilities.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-398">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="260">
+              <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CADeira.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CADeira.java">
+      <file leaf-file-name="CiCADa.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="270" column="22" lean-forward="true" selection-start-line="270" selection-start-column="22" selection-end-line="270" selection-end-column="22" />
+            <state relative-caret-position="188">
+              <caret line="463" column="38" lean-forward="false" selection-start-line="463" selection-start-column="38" selection-end-line="463" selection-end-column="38" />
               <folding>
-                <element signature="e#2452#3215#0" expanded="true" />
-                <element signature="e#3214#3215#0" expanded="true" />
+                <element signature="e#1214#1225#0" expanded="true" />
+                <element signature="e#1383#1392#0" expanded="true" />
+                <element signature="e#2404#3167#0" expanded="true" />
+                <element signature="e#3166#3167#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transformation2D.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Transformation2D.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-118">
+              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -147,8 +156,8 @@
       <file leaf-file-name="DesktopLauncher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="160">
+              <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -157,9 +166,72 @@
       <file leaf-file-name="BitmapFont.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/BitmapFont.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="2960">
               <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#0#35163#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#5189#5190#0" expanded="false" />
+                <element signature="e#5225#5226#0" expanded="false" />
+                <element signature="e#6227#6228#0" expanded="false" />
+                <element signature="e#6255#6256#0" expanded="false" />
+                <element signature="e#6990#6991#0" expanded="false" />
+                <element signature="e#7034#7035#0" expanded="false" />
+                <element signature="e#11950#11951#0" expanded="false" />
+                <element signature="e#11980#11981#0" expanded="false" />
+                <element signature="e#12136#12137#0" expanded="false" />
+                <element signature="e#12170#12171#0" expanded="false" />
+                <element signature="e#12349#12350#0" expanded="false" />
+                <element signature="e#12388#12389#0" expanded="false" />
+                <element signature="e#12418#12419#0" expanded="false" />
+                <element signature="e#12443#12444#0" expanded="false" />
+                <element signature="e#12473#12474#0" expanded="false" />
+                <element signature="e#12498#12499#0" expanded="false" />
+                <element signature="e#12778#12779#0" expanded="false" />
+                <element signature="e#12807#12808#0" expanded="false" />
+                <element signature="e#13029#13030#0" expanded="false" />
+                <element signature="e#13050#13051#0" expanded="false" />
+                <element signature="e#13198#13199#0" expanded="false" />
+                <element signature="e#13230#13231#0" expanded="false" />
+                <element signature="e#13354#13355#0" expanded="false" />
+                <element signature="e#13383#13384#0" expanded="false" />
+                <element signature="e#13467#13468#0" expanded="false" />
+                <element signature="e#13496#13497#0" expanded="false" />
+                <element signature="e#13638#13639#0" expanded="false" />
+                <element signature="e#13664#13665#0" expanded="false" />
+                <element signature="e#13942#13943#0" expanded="false" />
+                <element signature="e#13970#13971#0" expanded="false" />
+                <element signature="e#14103#14104#0" expanded="false" />
+                <element signature="e#14128#14129#0" expanded="false" />
+                <element signature="e#14309#14310#0" expanded="false" />
+                <element signature="e#14335#14336#0" expanded="false" />
+                <element signature="e#14465#14466#0" expanded="false" />
+                <element signature="e#14486#14487#0" expanded="false" />
+                <element signature="e#15913#15914#0" expanded="false" />
+                <element signature="e#15934#15935#0" expanded="false" />
+                <element signature="e#16220#16221#0" expanded="false" />
+                <element signature="e#16239#16240#0" expanded="false" />
+                <element signature="e#16348#16349#0" expanded="false" />
+                <element signature="e#16366#16367#0" expanded="false" />
+                <element signature="e#16499#16500#0" expanded="false" />
+                <element signature="e#16524#16525#0" expanded="false" />
+                <element signature="e#16795#16796#0" expanded="false" />
+                <element signature="e#16832#16833#0" expanded="false" />
+                <element signature="e#17200#17201#0" expanded="false" />
+                <element signature="e#17248#17249#0" expanded="false" />
+                <element signature="e#18274#18275#0" expanded="false" />
+                <element signature="e#18318#18319#0" expanded="false" />
+                <element signature="e#33604#33605#0" expanded="false" />
+                <element signature="e#33637#33638#0" expanded="false" />
+                <element signature="e#33675#33676#0" expanded="false" />
+                <element signature="e#33701#33702#0" expanded="false" />
+                <element signature="e#33739#33740#0" expanded="false" />
+                <element signature="e#33763#33764#0" expanded="false" />
+                <element signature="e#34866#34867#0" expanded="false" />
+                <element signature="e#34901#34902#0" expanded="false" />
+                <element signature="e#35105#35106#0" expanded="false" />
+                <element signature="e#35156#35157#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,9 +239,46 @@
       <file leaf-file-name="BitmapFontCache.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="8720">
               <caret line="473" column="0" lean-forward="false" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#2435#2436#0" expanded="false" />
+                <element signature="e#2481#2482#0" expanded="false" />
+                <element signature="e#3420#3421#0" expanded="false" />
+                <element signature="e#3460#3461#0" expanded="false" />
+                <element signature="e#6278#6279#0" expanded="false" />
+                <element signature="e#6314#6315#0" expanded="false" />
+                <element signature="e#6872#6873#0" expanded="false" />
+                <element signature="e#6920#6921#0" expanded="false" />
+                <element signature="e#8205#8206#0" expanded="false" />
+                <element signature="e#8224#8225#0" expanded="false" />
+                <element signature="e#8381#8382#0" expanded="false" />
+                <element signature="e#8409#8410#0" expanded="false" />
+                <element signature="e#8589#8590#0" expanded="false" />
+                <element signature="e#8617#8618#0" expanded="false" />
+                <element signature="e#19038#19039#0" expanded="false" />
+                <element signature="e#19088#19089#0" expanded="false" />
+                <element signature="e#19219#19220#0" expanded="false" />
+                <element signature="e#19234#19235#0" expanded="false" />
+                <element signature="e#19365#19366#0" expanded="false" />
+                <element signature="e#19380#19381#0" expanded="false" />
+                <element signature="e#19413#19414#0" expanded="false" />
+                <element signature="e#19431#19432#0" expanded="false" />
+                <element signature="e#19620#19621#0" expanded="false" />
+                <element signature="e#19645#19646#0" expanded="false" />
+                <element signature="e#19758#19759#0" expanded="false" />
+                <element signature="e#19779#19780#0" expanded="false" />
+                <element signature="e#19813#19814#0" expanded="false" />
+                <element signature="e#19841#19842#0" expanded="false" />
+                <element signature="e#19883#19884#0" expanded="false" />
+                <element signature="e#19915#19916#0" expanded="false" />
+                <element signature="e#19956#19957#0" expanded="false" />
+                <element signature="e#19979#19980#0" expanded="false" />
+                <element signature="e#20023#20024#0" expanded="false" />
+                <element signature="e#20044#20045#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -923,9 +1032,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java" />
         <option value="$PROJECT_DIR$/desktop/build.gradle" />
+        <option value="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java" />
+        <option value="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Transformation2D.java" />
         <option value="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CADeira.java" />
+        <option value="$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java" />
+        <option value="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java" />
       </list>
     </option>
   </component>
@@ -936,10 +1048,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1857" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -957,6 +1069,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1015,8 +1130,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Juliano1612" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cadeira" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="desktop" />
@@ -1073,15 +1226,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cadeira" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algebra" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1346,6 +1504,7 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -1474,6 +1633,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1515,27 +1680,27 @@
       <updated>1496713724949</updated>
       <workItem from="1496713728562" duration="110000" />
       <workItem from="1496751630810" duration="11765000" />
+      <workItem from="1496850666063" duration="10340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11875000" />
+    <option name="totallyTimeSpent" value="22215000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23590814" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2305141" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14538419" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14704256" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2039801" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1544,6 +1709,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1566,6 +1732,151 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5400">
+          <caret line="270" column="22" lean-forward="true" selection-start-line="270" selection-start-column="22" selection-end-line="270" selection-end-column="22" />
+          <folding>
+            <element signature="e#1214#1225#0" expanded="true" />
+            <element signature="e#1383#1392#0" expanded="true" />
+            <element signature="e#2404#3167#0" expanded="true" />
+            <element signature="e#3166#3167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/BitmapFont.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3820">
+          <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35163#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5189#5190#0" expanded="false" />
+            <element signature="e#5225#5226#0" expanded="false" />
+            <element signature="e#6227#6228#0" expanded="false" />
+            <element signature="e#6255#6256#0" expanded="false" />
+            <element signature="e#6990#6991#0" expanded="false" />
+            <element signature="e#7034#7035#0" expanded="false" />
+            <element signature="e#11950#11951#0" expanded="false" />
+            <element signature="e#11980#11981#0" expanded="false" />
+            <element signature="e#12136#12137#0" expanded="false" />
+            <element signature="e#12170#12171#0" expanded="false" />
+            <element signature="e#12349#12350#0" expanded="false" />
+            <element signature="e#12388#12389#0" expanded="false" />
+            <element signature="e#12418#12419#0" expanded="false" />
+            <element signature="e#12443#12444#0" expanded="false" />
+            <element signature="e#12473#12474#0" expanded="false" />
+            <element signature="e#12498#12499#0" expanded="false" />
+            <element signature="e#12778#12779#0" expanded="false" />
+            <element signature="e#12807#12808#0" expanded="false" />
+            <element signature="e#13029#13030#0" expanded="false" />
+            <element signature="e#13050#13051#0" expanded="false" />
+            <element signature="e#13198#13199#0" expanded="false" />
+            <element signature="e#13230#13231#0" expanded="false" />
+            <element signature="e#13354#13355#0" expanded="false" />
+            <element signature="e#13383#13384#0" expanded="false" />
+            <element signature="e#13467#13468#0" expanded="false" />
+            <element signature="e#13496#13497#0" expanded="false" />
+            <element signature="e#13638#13639#0" expanded="false" />
+            <element signature="e#13664#13665#0" expanded="false" />
+            <element signature="e#13942#13943#0" expanded="false" />
+            <element signature="e#13970#13971#0" expanded="false" />
+            <element signature="e#14103#14104#0" expanded="false" />
+            <element signature="e#14128#14129#0" expanded="false" />
+            <element signature="e#14309#14310#0" expanded="false" />
+            <element signature="e#14335#14336#0" expanded="false" />
+            <element signature="e#14465#14466#0" expanded="false" />
+            <element signature="e#14486#14487#0" expanded="false" />
+            <element signature="e#15913#15914#0" expanded="false" />
+            <element signature="e#15934#15935#0" expanded="false" />
+            <element signature="e#16220#16221#0" expanded="false" />
+            <element signature="e#16239#16240#0" expanded="false" />
+            <element signature="e#16348#16349#0" expanded="false" />
+            <element signature="e#16366#16367#0" expanded="false" />
+            <element signature="e#16499#16500#0" expanded="false" />
+            <element signature="e#16524#16525#0" expanded="false" />
+            <element signature="e#16795#16796#0" expanded="false" />
+            <element signature="e#16832#16833#0" expanded="false" />
+            <element signature="e#17200#17201#0" expanded="false" />
+            <element signature="e#17248#17249#0" expanded="false" />
+            <element signature="e#18274#18275#0" expanded="false" />
+            <element signature="e#18318#18319#0" expanded="false" />
+            <element signature="e#33604#33605#0" expanded="false" />
+            <element signature="e#33637#33638#0" expanded="false" />
+            <element signature="e#33675#33676#0" expanded="false" />
+            <element signature="e#33701#33702#0" expanded="false" />
+            <element signature="e#33739#33740#0" expanded="false" />
+            <element signature="e#33763#33764#0" expanded="false" />
+            <element signature="e#34866#34867#0" expanded="false" />
+            <element signature="e#34901#34902#0" expanded="false" />
+            <element signature="e#35105#35106#0" expanded="false" />
+            <element signature="e#35156#35157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9460">
+          <caret line="473" column="0" lean-forward="false" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2435#2436#0" expanded="false" />
+            <element signature="e#2481#2482#0" expanded="false" />
+            <element signature="e#3420#3421#0" expanded="false" />
+            <element signature="e#3460#3461#0" expanded="false" />
+            <element signature="e#6278#6279#0" expanded="false" />
+            <element signature="e#6314#6315#0" expanded="false" />
+            <element signature="e#6872#6873#0" expanded="false" />
+            <element signature="e#6920#6921#0" expanded="false" />
+            <element signature="e#8205#8206#0" expanded="false" />
+            <element signature="e#8224#8225#0" expanded="false" />
+            <element signature="e#8381#8382#0" expanded="false" />
+            <element signature="e#8409#8410#0" expanded="false" />
+            <element signature="e#8589#8590#0" expanded="false" />
+            <element signature="e#8617#8618#0" expanded="false" />
+            <element signature="e#19038#19039#0" expanded="false" />
+            <element signature="e#19088#19089#0" expanded="false" />
+            <element signature="e#19219#19220#0" expanded="false" />
+            <element signature="e#19234#19235#0" expanded="false" />
+            <element signature="e#19365#19366#0" expanded="false" />
+            <element signature="e#19380#19381#0" expanded="false" />
+            <element signature="e#19413#19414#0" expanded="false" />
+            <element signature="e#19431#19432#0" expanded="false" />
+            <element signature="e#19620#19621#0" expanded="false" />
+            <element signature="e#19645#19646#0" expanded="false" />
+            <element signature="e#19758#19759#0" expanded="false" />
+            <element signature="e#19779#19780#0" expanded="false" />
+            <element signature="e#19813#19814#0" expanded="false" />
+            <element signature="e#19841#19842#0" expanded="false" />
+            <element signature="e#19883#19884#0" expanded="false" />
+            <element signature="e#19915#19916#0" expanded="false" />
+            <element signature="e#19956#19957#0" expanded="false" />
+            <element signature="e#19979#19980#0" expanded="false" />
+            <element signature="e#20023#20024#0" expanded="false" />
+            <element signature="e#20044#20045#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1610,7 +1921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-48">
           <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1618,7 +1928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1626,7 +1935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1634,7 +1942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="1051" column="121" lean-forward="false" selection-start-line="1051" selection-start-column="31" selection-end-line="1051" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1642,49 +1949,186 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="670">
           <caret line="106" column="11" lean-forward="false" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/BitmapFont.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="2960">
           <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#35163#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5189#5190#0" expanded="false" />
+            <element signature="e#5225#5226#0" expanded="false" />
+            <element signature="e#6227#6228#0" expanded="false" />
+            <element signature="e#6255#6256#0" expanded="false" />
+            <element signature="e#6990#6991#0" expanded="false" />
+            <element signature="e#7034#7035#0" expanded="false" />
+            <element signature="e#11950#11951#0" expanded="false" />
+            <element signature="e#11980#11981#0" expanded="false" />
+            <element signature="e#12136#12137#0" expanded="false" />
+            <element signature="e#12170#12171#0" expanded="false" />
+            <element signature="e#12349#12350#0" expanded="false" />
+            <element signature="e#12388#12389#0" expanded="false" />
+            <element signature="e#12418#12419#0" expanded="false" />
+            <element signature="e#12443#12444#0" expanded="false" />
+            <element signature="e#12473#12474#0" expanded="false" />
+            <element signature="e#12498#12499#0" expanded="false" />
+            <element signature="e#12778#12779#0" expanded="false" />
+            <element signature="e#12807#12808#0" expanded="false" />
+            <element signature="e#13029#13030#0" expanded="false" />
+            <element signature="e#13050#13051#0" expanded="false" />
+            <element signature="e#13198#13199#0" expanded="false" />
+            <element signature="e#13230#13231#0" expanded="false" />
+            <element signature="e#13354#13355#0" expanded="false" />
+            <element signature="e#13383#13384#0" expanded="false" />
+            <element signature="e#13467#13468#0" expanded="false" />
+            <element signature="e#13496#13497#0" expanded="false" />
+            <element signature="e#13638#13639#0" expanded="false" />
+            <element signature="e#13664#13665#0" expanded="false" />
+            <element signature="e#13942#13943#0" expanded="false" />
+            <element signature="e#13970#13971#0" expanded="false" />
+            <element signature="e#14103#14104#0" expanded="false" />
+            <element signature="e#14128#14129#0" expanded="false" />
+            <element signature="e#14309#14310#0" expanded="false" />
+            <element signature="e#14335#14336#0" expanded="false" />
+            <element signature="e#14465#14466#0" expanded="false" />
+            <element signature="e#14486#14487#0" expanded="false" />
+            <element signature="e#15913#15914#0" expanded="false" />
+            <element signature="e#15934#15935#0" expanded="false" />
+            <element signature="e#16220#16221#0" expanded="false" />
+            <element signature="e#16239#16240#0" expanded="false" />
+            <element signature="e#16348#16349#0" expanded="false" />
+            <element signature="e#16366#16367#0" expanded="false" />
+            <element signature="e#16499#16500#0" expanded="false" />
+            <element signature="e#16524#16525#0" expanded="false" />
+            <element signature="e#16795#16796#0" expanded="false" />
+            <element signature="e#16832#16833#0" expanded="false" />
+            <element signature="e#17200#17201#0" expanded="false" />
+            <element signature="e#17248#17249#0" expanded="false" />
+            <element signature="e#18274#18275#0" expanded="false" />
+            <element signature="e#18318#18319#0" expanded="false" />
+            <element signature="e#33604#33605#0" expanded="false" />
+            <element signature="e#33637#33638#0" expanded="false" />
+            <element signature="e#33675#33676#0" expanded="false" />
+            <element signature="e#33701#33702#0" expanded="false" />
+            <element signature="e#33739#33740#0" expanded="false" />
+            <element signature="e#33763#33764#0" expanded="false" />
+            <element signature="e#34866#34867#0" expanded="false" />
+            <element signature="e#34901#34902#0" expanded="false" />
+            <element signature="e#35105#35106#0" expanded="false" />
+            <element signature="e#35156#35157#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/g2d/BitmapFontCache.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="8720">
           <caret line="473" column="0" lean-forward="false" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2435#2436#0" expanded="false" />
+            <element signature="e#2481#2482#0" expanded="false" />
+            <element signature="e#3420#3421#0" expanded="false" />
+            <element signature="e#3460#3461#0" expanded="false" />
+            <element signature="e#6278#6279#0" expanded="false" />
+            <element signature="e#6314#6315#0" expanded="false" />
+            <element signature="e#6872#6873#0" expanded="false" />
+            <element signature="e#6920#6921#0" expanded="false" />
+            <element signature="e#8205#8206#0" expanded="false" />
+            <element signature="e#8224#8225#0" expanded="false" />
+            <element signature="e#8381#8382#0" expanded="false" />
+            <element signature="e#8409#8410#0" expanded="false" />
+            <element signature="e#8589#8590#0" expanded="false" />
+            <element signature="e#8617#8618#0" expanded="false" />
+            <element signature="e#19038#19039#0" expanded="false" />
+            <element signature="e#19088#19089#0" expanded="false" />
+            <element signature="e#19219#19220#0" expanded="false" />
+            <element signature="e#19234#19235#0" expanded="false" />
+            <element signature="e#19365#19366#0" expanded="false" />
+            <element signature="e#19380#19381#0" expanded="false" />
+            <element signature="e#19413#19414#0" expanded="false" />
+            <element signature="e#19431#19432#0" expanded="false" />
+            <element signature="e#19620#19621#0" expanded="false" />
+            <element signature="e#19645#19646#0" expanded="false" />
+            <element signature="e#19758#19759#0" expanded="false" />
+            <element signature="e#19779#19780#0" expanded="false" />
+            <element signature="e#19813#19814#0" expanded="false" />
+            <element signature="e#19841#19842#0" expanded="false" />
+            <element signature="e#19883#19884#0" expanded="false" />
+            <element signature="e#19915#19916#0" expanded="false" />
+            <element signature="e#19956#19957#0" expanded="false" />
+            <element signature="e#19979#19980#0" expanded="false" />
+            <element signature="e#20023#20024#0" expanded="false" />
+            <element signature="e#20044#20045#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/CADeira.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20829#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Circle.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Transformation2D.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#1842#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="160">
+          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Transformation2D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-398">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="-118">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CADeira.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="270" column="22" lean-forward="true" selection-start-line="270" selection-start-column="22" selection-end-line="270" selection-end-column="22" />
+        <state relative-caret-position="188">
+          <caret line="463" column="38" lean-forward="false" selection-start-line="463" selection-start-column="38" selection-end-line="463" selection-end-column="38" />
           <folding>
-            <element signature="e#2452#3215#0" expanded="true" />
-            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#1214#1225#0" expanded="true" />
+            <element signature="e#1383#1392#0" expanded="true" />
+            <element signature="e#2404#3167#0" expanded="true" />
+            <element signature="e#3166#3167#0" expanded="true" />
           </folding>
         </state>
       </provider>

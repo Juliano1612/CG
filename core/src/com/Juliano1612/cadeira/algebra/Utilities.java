@@ -4,12 +4,12 @@ public class Utilities {
 
 
     /*Multiply Matrix1[n][m] * Matrix2[k][l] and return Matrix3[n][l]*/
-    public Double[][] matrixMultiplication(Double[][] m1, Double[][] m2) {
-        Double[][] tmp = new Double[m1.length][m2[0].length];
+    public Float[][] matrixMultiplication(Float[][] m1, Float[][] m2) {
+        Float[][] tmp = new Float[m1.length][m2[0].length];
 
-        for (int i = 0; i < tmp.length; i++) {
-            for (int j = 0; j < tmp[0].length; j++) {
-                tmp[i][j] = 0d;
+        for (int i = 0; i < m1.length; i++) {
+            for (int j = 0; j < m2[0].length; j++) {
+                tmp[i][j] = 0f;
             }
         }
 
@@ -24,27 +24,27 @@ public class Utilities {
         return tmp;
     }
 
-    public Double[][] createMatrixTranslation(Double x, Double y) {
-        Double[][] tmp = {{1d, 0d, x}, {0d, 1d, y}, {0d, 0d, 1d}};
+    public Float[][] createMatrixTranslation(Float x, Float y) {
+        Float[][] tmp = {{1f, 0f, x}, {0f, 1f, y}, {0f, 0f, 1f}};
         return tmp;
     }
 
-    public Double[][] createMatrixScale(Double sx, Double sy) {
-        Double[][] tmp = {{sx, 0d, 0d}, {0d, sy, 0d}, {0d, 0d, 1d}};
+    public Float[][] createMatrixScale(Float sx, Float sy) {
+        Float[][] tmp = {{sx, 0f, 0f}, {0f, sy, 0f}, {0f, 0f, 1f}};
         return tmp;
     }
 
-    public Double[][] createMatrixRotation(Double theta) {
-        Double thetaInRadian = Math.toRadians(theta);
+    public Float[][] createMatrixRotation(Float theta) {
+        Float thetaInRadian = (float)Math.toRadians(theta);
 
-        Double[][] tmp = {{Math.cos(thetaInRadian), (Math.sin(thetaInRadian)), 0d},
-                         {Math.sin(thetaInRadian), Math.cos(thetaInRadian), 0d},
-                         {0d, 0d, 1d}};
+        Float[][] tmp = {{(float)Math.cos(thetaInRadian), ((float)Math.sin(thetaInRadian)), 0f},
+                         {(float)Math.sin(thetaInRadian), (float)Math.cos(thetaInRadian), 0f},
+                         {0f, 0f, 1f}};
         return tmp;
     }
 
-    public Double[][] createMatrixTranslateToOrigin(Double x, Double y) {
-        Double[][] tmp = {{1d, 0d, (x*(-1))}, {0d, 1d, (y*(-1))}, {0d, 0d, 1d}};
+    public Float[][] createMatrixTranslateToOrigin(Float x, Float y) {
+        Float[][] tmp = {{1f, 0f, (x*(-1f))}, {0f, 1f, (y*(-1))}, {0f, 0f, 1f}};
         return tmp;
     }
 
@@ -58,6 +58,15 @@ public class Utilities {
         }
 
         return a;
+    }
+
+    public void printMatrix(Float[][] m){
+        for(int i = 0; i < m.length; i++){
+            for(int j = 0; j < m[0].length; j++){
+                System.out.printf(" "+m[i][j]);
+            }
+            System.out.println("");
+        }
     }
 
 }
