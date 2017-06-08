@@ -51,7 +51,7 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
     @Override
     public void create() {
         font = new BitmapFont();
-        font.setColor(1, 1, 1, 1);
+        font.setColor(0.44f, 0.44f, 0.44f, 1);
         renderer = new ShapeRenderer();
         text = "";
         terminalCommand = "";
@@ -99,7 +99,14 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                     relX = x;
                     relY = y;
 
-                    Float[][] objTmp = new Transformation2D().translateFigure(objects.get(objectToTransform), relX, relY);
+                    Float[][] objTmp = null;
+                    if (objects.get(objectToTransform)[1][1] == Float.NEGATIVE_INFINITY) {//circle
+                        objTmp = objects.get(objectToTransform);
+                        objTmp[0][0] = relX;
+                        objTmp[1][0] = relY;
+                    } else {
+                        objTmp = new Transformation2D().translateFigure(objects.get(objectToTransform), relX, relY);
+                    }
                     objects.remove(objectToTransform);
                     objects.add(objTmp);
 
@@ -298,7 +305,13 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                             tokenizer = new StringTokenizer(text);
                             relX = Float.parseFloat(tokenizer.nextToken().trim());
                             relY = Float.parseFloat(tokenizer.nextToken().trim());
-                            objTmp = new Transformation2D().translateFigure(objects.get(objectToTransform), relX, relY);
+                            if (objects.get(objectToTransform)[1][1] == Float.NEGATIVE_INFINITY) {//circle
+                                objTmp = objects.get(objectToTransform);
+                                objTmp[0][0] = relX;
+                                objTmp[1][0] = relY;
+                            } else {
+                                objTmp = new Transformation2D().translateFigure(objects.get(objectToTransform), relX, relY);
+                            }
                             objects.remove(objectToTransform);
                             objects.add(objTmp);
 
@@ -311,7 +324,12 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                             tokenizer = new StringTokenizer(text);
                             relX = Float.parseFloat(tokenizer.nextToken());
                             relY = Float.parseFloat(tokenizer.nextToken());
-                            objTmp = new Transformation2D().scaleFigure(objects.get(objectToTransform), relX, relY);
+                            if (objects.get(objectToTransform)[1][1] == Float.NEGATIVE_INFINITY) {//circle
+                                objTmp = objects.get(objectToTransform);
+                                objTmp[0][1] *= relX;
+                            } else {
+                                objTmp = new Transformation2D().scaleFigure(objects.get(objectToTransform), relX, relY);
+                            }
                             objects.remove(objectToTransform);
                             objects.add(objTmp);
 
@@ -472,7 +490,7 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
         //Gdx.gl30.glLineWidth(1);
         renderer.setProjectionMatrix(camera.combined);
         renderer.begin(ShapeRenderer.ShapeType.Line);
-        renderer.setColor(0, 0, 0, 0);
+        renderer.setColor(0.44f, 0.44f, 0.44f, 1);
         //renderer.line(line.get(0), line.get(1));
 
         drawObjects();

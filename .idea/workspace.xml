@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7b18d91-dde7-4f2c-aa07-862a3ed768ce" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/CADeira$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/CADeira$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/CADeira.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CADeira.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Transformation2D.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Transformation2D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Utilities.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/Juliano1612/cadeira/algebra/Utilities.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/build/classes/main/com/Juliano1612/cadeira/desktop/DesktopLauncher.class" afterPath="$PROJECT_DIR$/desktop/build/classes/main/com/Juliano1612/cadeira/desktop/DesktopLauncher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Transformation2D.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Transformation2D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/algebra/Utilities.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java" afterPath="$PROJECT_DIR$/desktop/src/com/Juliano1612/cadeira/desktop/DesktopLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java" afterPath="$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java" />
     </list>
     <ignored path="$PROJECT_DIR$/core/.gradle/" />
     <ignored path="$PROJECT_DIR$/core/build/" />
@@ -131,13 +115,13 @@
       <file leaf-file-name="CiCADa.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="463" column="38" lean-forward="false" selection-start-line="463" selection-start-column="38" selection-end-line="463" selection-end-column="38" />
+            <state relative-caret-position="179">
+              <caret line="328" column="43" lean-forward="false" selection-start-line="328" selection-start-column="43" selection-end-line="328" selection-end-column="43" />
               <folding>
                 <element signature="e#1214#1225#0" expanded="true" />
                 <element signature="e#1383#1392#0" expanded="true" />
-                <element signature="e#2404#3167#0" expanded="true" />
-                <element signature="e#3166#3167#0" expanded="true" />
+                <element signature="e#2416#3179#0" expanded="true" />
+                <element signature="e#3178#3179#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1680,12 +1664,12 @@
       <updated>1496713724949</updated>
       <workItem from="1496713728562" duration="110000" />
       <workItem from="1496751630810" duration="11765000" />
-      <workItem from="1496850666063" duration="10340000" />
+      <workItem from="1496850666063" duration="12020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22215000" />
+    <option name="totallyTimeSpent" value="23895000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
@@ -1747,8 +1731,8 @@
           <folding>
             <element signature="e#1214#1225#0" expanded="true" />
             <element signature="e#1383#1392#0" expanded="true" />
-            <element signature="e#2404#3167#0" expanded="true" />
-            <element signature="e#3166#3167#0" expanded="true" />
+            <element signature="e#2416#3179#0" expanded="true" />
+            <element signature="e#3178#3179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2122,13 +2106,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/Juliano1612/cadeira/CiCADa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="463" column="38" lean-forward="false" selection-start-line="463" selection-start-column="38" selection-end-line="463" selection-end-column="38" />
+        <state relative-caret-position="179">
+          <caret line="328" column="43" lean-forward="false" selection-start-line="328" selection-start-column="43" selection-end-line="328" selection-end-column="43" />
           <folding>
             <element signature="e#1214#1225#0" expanded="true" />
             <element signature="e#1383#1392#0" expanded="true" />
-            <element signature="e#2404#3167#0" expanded="true" />
-            <element signature="e#3166#3167#0" expanded="true" />
+            <element signature="e#2416#3179#0" expanded="true" />
+            <element signature="e#3178#3179#0" expanded="true" />
           </folding>
         </state>
       </provider>
