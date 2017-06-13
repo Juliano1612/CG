@@ -12,11 +12,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import java.util.ArrayList;
 import java.util.StringTokenizer;
@@ -59,12 +61,12 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
         line.add(new Vector2(60f, 100f));
 
         camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()); //2D camera
-        camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());// y increases upward, viewport = window
+        camera.setToOrtho(false);// y increases upward, viewport = window
         camera.update();
 
         batch = new SpriteBatch();//desenhando no batch
 
-        stage = new Stage(); //window is stage
+        stage = new Stage(new ScreenViewport(camera)); //window is stage
         stage.clear();
         InputListener terminal = new InputListener() {
             @Override
@@ -116,9 +118,8 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
             }
 
             @Override
-            public void clicked(InputEvent evt, float x, float y) {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 if (dTransforming && transformationSelected == 0) {
-
                     relX = x;
                     relY = y;
 
@@ -201,7 +202,7 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                         contaPos = 0;
                     }
                 }
-
+                return true;
             }
         });
         stage.addListener(terminal);
@@ -534,6 +535,12 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
         if (dTerminal)
             font.draw(batch, terminalCommand + text, 0, 800);
         batch.end();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        camera.position.set(new Vector3(width / 2, height/ 2, 0f));
+        stage.getViewport().update(width, height);
     }
 
     @Override

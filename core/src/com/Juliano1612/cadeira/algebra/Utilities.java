@@ -37,7 +37,7 @@ public class Utilities {
     public Float[][] createMatrixRotation(Float theta) {
         Float thetaInRadian = (float)Math.toRadians(theta);
 
-        Float[][] tmp = {{(float)Math.cos(thetaInRadian), ((float)Math.sin(thetaInRadian)), 0f},
+        Float[][] tmp = {{(float)Math.cos(thetaInRadian), -((float)Math.sin(thetaInRadian)), 0f},
                          {(float)Math.sin(thetaInRadian), (float)Math.cos(thetaInRadian), 0f},
                          {0f, 0f, 1f}};
         return tmp;
