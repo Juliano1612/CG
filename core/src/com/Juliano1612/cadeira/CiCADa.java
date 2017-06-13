@@ -2,16 +2,15 @@ package com.Juliano1612.cadeira;
 
 import com.Juliano1612.cadeira.algebra.Transformation2D;
 import com.Juliano1612.cadeira.algebra.Utilities;
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.ApplicationListener;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -92,6 +91,30 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
 
 
         stage.addListener(new ClickListener(Input.Buttons.LEFT) {
+
+            @Override
+            public boolean mouseMoved(InputEvent event, float x, float y) {
+                if (dLine && contaPos < 2) {
+                    coordinates[0][contaPos] = x;
+                    coordinates[1][contaPos] = y;
+                } else if (dTriangle && contaPos < 3) {
+                    coordinates[0][contaPos] = x;
+                    coordinates[1][contaPos] = y;
+                } else if (dSquare && contaPos < 4) {
+                    coordinates[0][contaPos] = x;
+                    coordinates[1][contaPos] = y;
+                } else if (dCircle && contaPos < 2) {
+                    if (coordinates[0][0] != null && coordinates[1][0] != null) {
+                        coordinates[0][contaPos] = x;
+                        coordinates[1][contaPos] = y;
+                        double raio = Math.sqrt(Math.pow((coordinates[0][0] - coordinates[0][1]), 2) + Math.pow((coordinates[1][0] - coordinates[1][1]), 2));
+                        coordinates[0][1] = (float) raio;
+                        coordinates[1][1] = (float) Double.NEGATIVE_INFINITY;
+                    }
+                } else return false;
+                return true;
+            }
+
             @Override
             public void clicked(InputEvent evt, float x, float y) {
                 if (dTransforming && transformationSelected == 0) {
@@ -461,7 +484,8 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                 switch (obj[0].length) {
                     case 2:
                         if (obj[1][1] == Float.NEGATIVE_INFINITY) {//circle
-                            renderer.circle(obj[0][0], obj[1][0], obj[0][1]);
+                            renderer.circle(obj[0][0], obj[1][0], obj[0][1], 256);
+                            //renderer.ellipse(obj[0][0], obj[1][0], obj[0][1], obj[0][1]);
                         } else {//line
                             renderer.line(obj[0][0], obj[1][0], obj[0][1], obj[1][1]);
                         }
@@ -474,6 +498,16 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                         break;
                 }
             }
+        }
+        if (dLine || dTriangle || dSquare) {
+            if (coordinates != null)
+                for (int i = 0; i < coordinates[0].length; i++)
+                    if (coordinates[0][i] != null && coordinates[1][i] != null && coordinates[0][(i + 1) % coordinates[0].length] != null && coordinates[1][(i + 1) % coordinates[0].length] != null)
+                        renderer.line(coordinates[0][i], coordinates[1][i], coordinates[0][(i + 1) % coordinates[0].length], coordinates[1][(i + 1) % coordinates[0].length]);
+        } else if (dCircle) {
+            if (coordinates != null)
+                if (coordinates[0][0] != null && coordinates[1][0] != null && coordinates[0][1] != null)
+                    renderer.circle(coordinates[0][0], coordinates[1][0], coordinates[0][1], 256);
         }
     }
 
