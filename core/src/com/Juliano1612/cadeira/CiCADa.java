@@ -5,12 +5,10 @@ import com.Juliano1612.cadeira.algebra.Utilities;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -20,6 +18,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -47,12 +46,20 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
     int contaPos = 0;
 
     private String text, terminalCommand;
-    private BitmapFont font;
+    private BitmapFont font, fontPos;
+
+    float posX, posY;
+    DecimalFormat df = new DecimalFormat("#.00");
 
     @Override
     public void create() {
         font = new BitmapFont();
         font.setColor(0.44f, 0.44f, 0.44f, 1);
+
+        fontPos = new BitmapFont();
+        fontPos.setColor(0.66f, 0.66f, 0.66f, 1);
+        fontPos.getData().setScale(.9f);
+
         renderer = new ShapeRenderer();
         text = "";
         terminalCommand = "";
@@ -96,6 +103,9 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
 
             @Override
             public boolean mouseMoved(InputEvent event, float x, float y) {
+                posX = x;
+                posY = y;
+
                 if (dLine && contaPos < 2) {
                     coordinates[0][contaPos] = x;
                     coordinates[1][contaPos] = y;
@@ -479,6 +489,18 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
         }
     }
 
+    public void writeVertexPoints() {
+        if (objects.size() > 0) {
+            for (Float[][] obj : objects) {
+                if (obj[1][1] != Float.NEGATIVE_INFINITY) {//if is not a circle
+                    for (int i = 0; i < obj[0].length; i++) {
+                        fontPos.draw(batch, df.format(obj[0][i]) + "," + df.format(obj[1][i]), obj[0][i], obj[1][i]);
+                    }
+                }
+            }
+        }
+    }
+
     public void drawObjects() {
         if (objects.size() > 0) {
             for (Float[][] obj : objects) {
@@ -532,6 +554,9 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
         renderer.end();
 
         batch.begin();
+        writeVertexPoints();
+        fontPos.draw(batch, df.format(posX) + "," + df.format(posY), posX - 35, posY - 17);
+
         if (dTerminal)
             font.draw(batch, terminalCommand + text, 0, 800);
         batch.end();
@@ -539,7 +564,7 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
 
     @Override
     public void resize(int width, int height) {
-        camera.position.set(new Vector3(width / 2, height/ 2, 0f));
+        camera.position.set(new Vector3(width / 2, height / 2, 0f));
         stage.getViewport().update(width, height);
     }
 
