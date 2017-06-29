@@ -47,6 +47,10 @@ public class Utilities {
         Float[][] tmp = {{1f, 0f, (x*(-1f))}, {0f, 1f, (y*(-1))}, {0f, 0f, 1f}};
         return tmp;
     }
+    public Float[][] createMatrixTranslateToPoint(Float x, Float y) {
+        Float[][] tmp = {{1f, 0f, (x*(-1f))}, {0f, 1f, (y*(-1))}, {0f, 0f, 1f}};
+        return tmp;
+    }
 
     public float[] floatMatrixToArray(Float[][] m){
         float[] a = new float[2*m[0].length];

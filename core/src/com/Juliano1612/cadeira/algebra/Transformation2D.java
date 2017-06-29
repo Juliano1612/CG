@@ -20,14 +20,14 @@ public class Transformation2D {
     *  y' = 0 1 dy * sinY  cosT 0 * 0 1 -dy * Mobj
     *  w'   0 0 1      0    0   1   0 0  1
     */
-    public Float[][] rotateFigure(Float[][] mF, Float theta) {
+    public Float[][] rotateFigure(Float[][] mF, Float theta, Float x, Float y) {
         Utilities utilities = new Utilities();
-        Float[][] mTranslationOrigin = utilities.createMatrixTranslateToOrigin(mF[0][0], mF[1][0]);
-        Float[][] mTranslation = utilities.createMatrixTranslation(mF[0][0], mF[1][0]);
         Float[][] mRotation = utilities.createMatrixRotation(theta);
+        Float[][] mTranslation = utilities.createMatrixTranslation(x, y);
+        Float[][] mTranslationToPoint = utilities.createMatrixTranslateToPoint(x, y);
 
-        mTranslationOrigin = utilities.matrixMultiplication(mTranslationOrigin, mF);
-        mRotation = utilities.matrixMultiplication(mRotation, mTranslationOrigin);
+        mTranslationToPoint = utilities.matrixMultiplication(mTranslationToPoint, mF);
+        mRotation = utilities.matrixMultiplication(mRotation, mTranslationToPoint);
         mTranslation = utilities.matrixMultiplication(mTranslation, mRotation);
 
         return mTranslation;

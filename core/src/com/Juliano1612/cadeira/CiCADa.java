@@ -17,6 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.sun.corba.se.spi.orbutil.fsm.InputImpl;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -40,8 +41,8 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
 
     ArrayList<Vector2> line = new ArrayList<Vector2>();
 
-    boolean dLine = false, dCircle = false, dTriangle = false, dSquare = false;
-    boolean dTerminal = false, dDeleting = false, dSelectingObject = false, dSelectingTransformation = false, dTransforming = false;
+    boolean dLine = false, dCircle = false, dTriangle = false, dSquare = false, dQuadrangle = false, dRectangle = false;
+    boolean dTerminal = false, dDeleting = false, dSelectingObject = false, dSelectingTransformation = false, dTransforming = false, dShowPos = false, dRotating = false;
 
     int contaPos = 0;
 
@@ -112,9 +113,28 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                 } else if (dTriangle && contaPos < 3) {
                     coordinates[0][contaPos] = x;
                     coordinates[1][contaPos] = y;
-                } else if (dSquare && contaPos < 4) {
+                } else if (dQuadrangle && contaPos < 4) {
                     coordinates[0][contaPos] = x;
                     coordinates[1][contaPos] = y;
+                } else if (dRectangle && contaPos < 2) {
+                    coordinates[0][contaPos * 2] = x;
+                    coordinates[1][contaPos * 2] = y;
+                    coordinates[0][3] = coordinates[0][0];
+                    coordinates[1][1] = coordinates[1][0];
+                    //if (coordinates[0][2] != null) {
+                        coordinates[1][3] = coordinates[1][2];
+                        coordinates[0][1] = coordinates[0][2];
+                    //}
+                } else if (dSquare && contaPos < 2) {
+                    coordinates[0][contaPos * 2] = x;
+                    coordinates[1][contaPos * 2] = y;
+                    if(coordinates[0][2] != null){
+                        double lado = (Math.sqrt(Math.pow((coordinates[0][0] - coordinates[0][2]), 2) + Math.pow((coordinates[1][0] - coordinates[1][2]), 2)))/(Math.sqrt(2d));
+                        coordinates[0][3] = coordinates[0][0];
+                        coordinates[1][1] = coordinates[1][0];
+                        coordinates[1][3] = coordinates[1][0] - (float) lado;
+                        coordinates[0][1] = coordinates[0][0] + (float) lado;
+                    }
                 } else if (dCircle && contaPos < 2) {
                     if (coordinates[0][0] != null && coordinates[1][0] != null) {
                         coordinates[0][contaPos] = x;
@@ -129,6 +149,34 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
 
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                if (transformationSelected == 2 && dRotating) {
+                    System.out.println("oie");
+                    Float[][] objTmp;
+                    if (objects.get(objectToTransform)[1][1] == Float.NEGATIVE_INFINITY) {
+                        Float[][] objTmpAux = new Float[3][1];
+                        objTmpAux[0][0] = objects.get(objectToTransform)[0][0];
+                        objTmpAux[1][0] = objects.get(objectToTransform)[1][0];
+                        objTmpAux[2][0] = 1f;
+                        objTmpAux = new Transformation2D().rotateFigure(objTmpAux, theta, x, y);
+                        objTmp = new Float[3][2];
+                        objTmp[0][0] = objTmpAux[0][0];
+                        objTmp[1][0] = objTmpAux[1][0];
+                        objTmp[0][1] = objects.get(objectToTransform)[0][1];
+                        objTmp[1][1] = Float.NEGATIVE_INFINITY;
+                        objTmp[2][0] = 1f;
+                        objTmp[2][1] = 1f;
+                    } else {
+                        objTmp = new Transformation2D().rotateFigure(objects.get(objectToTransform), theta, x, y);
+                    }
+                    objects.remove(objectToTransform);
+                    objects.add(objTmp);
+
+                    transformationSelected = -1;
+                    terminalCommand = "";
+                    text = "";
+                    dTerminal = false;
+                    dRotating = false;
+                }
                 if (dTransforming && transformationSelected == 0) {
                     relX = x;
                     relY = y;
@@ -180,12 +228,62 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                         objects.add(coordinates);
                         contaPos = 0;
                     }
-                } else if (dSquare && contaPos < 4) {
+                } else if (dQuadrangle && contaPos < 4) {
                     coordinates[0][contaPos] = x;
                     coordinates[1][contaPos] = y;
                     contaPos++;
                     if (contaPos == 4) {
+                        dQuadrangle = false;
+                        for (int i = 0; i < 4; i++) {
+                            System.out.println("Vertice [" + coordinates[0][i] + "][" + coordinates[1][i] + "]");
+                        }
+                        coordinates[2][0] = 1f;
+                        coordinates[2][1] = 1f;
+                        coordinates[2][2] = 1f;
+                        coordinates[2][3] = 1f;
+
+                        objects.add(coordinates);
+                        contaPos = 0;
+                    }
+                } else if (dRectangle && contaPos < 2) {
+                    coordinates[0][contaPos * 2] = x;
+                    coordinates[1][contaPos * 2] = y;
+                    contaPos++;
+                    if (contaPos == 2) {
+                        dRectangle = false;
+
+                        coordinates[0][1] = coordinates[0][2];
+                        coordinates[1][1] = coordinates[1][0];
+                        coordinates[0][3] = coordinates[0][0];
+                        coordinates[1][3] = coordinates[1][2];
+
+                        for (int i = 0; i < 4; i++) {
+                            System.out.println("Vertice [" + coordinates[0][i] + "][" + coordinates[1][i] + "]");
+                        }
+                        coordinates[2][0] = 1f;
+                        coordinates[2][1] = 1f;
+                        coordinates[2][2] = 1f;
+                        coordinates[2][3] = 1f;
+
+                        objects.add(coordinates);
+                        contaPos = 0;
+                    }
+                }else if(dSquare && contaPos < 2){
+                    coordinates[0][contaPos * 2] = x;
+                    coordinates[1][contaPos * 2] = y;
+                    contaPos++;
+                    if (contaPos == 2) {
                         dSquare = false;
+
+                        double lado = (Math.sqrt(Math.pow((coordinates[0][0] - coordinates[0][2]), 2) + Math.pow((coordinates[1][0] - coordinates[1][2]), 2)))/(Math.sqrt(2d));
+                        coordinates[0][3] = coordinates[0][0];
+                        coordinates[1][1] = coordinates[1][0];
+                        coordinates[1][3] = coordinates[1][0] - (float) lado;
+                        coordinates[0][1] = coordinates[0][0] + (float) lado;
+                        coordinates[0][2] = coordinates[0][3] + (float) lado;
+                        coordinates[1][2] = coordinates[1][3];
+
+
                         for (int i = 0; i < 4; i++) {
                             System.out.println("Vertice [" + coordinates[0][i] + "][" + coordinates[1][i] + "]");
                         }
@@ -219,6 +317,47 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
 
     }
 
+    @Override
+    public void render() {
+        Gdx.gl.glClearColor(0, 0, 0, 0);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);//limpa buffer com cor limpa
+
+        verifyInputs();
+
+        stage.act();
+        stage.draw();
+
+        //Gdx.gl30.glLineWidth(1);
+        renderer.setProjectionMatrix(camera.combined);
+        renderer.begin(ShapeRenderer.ShapeType.Line);
+        renderer.setColor(0.44f, 0.44f, 0.44f, 1);
+        //renderer.line(line.get(0), line.get(1));
+
+        drawObjects();
+        renderer.end();
+
+        batch.begin();
+        if (dShowPos)
+            writeVertexPoints();
+        fontPos.draw(batch, df.format(posX) + "," + df.format(posY), posX - 35, posY - 17);
+
+        if (dTerminal)
+            font.draw(batch, terminalCommand + text, 0, 800);
+        batch.end();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        camera.position.set(new Vector3(width / 2, height / 2, 0f));
+        stage.getViewport().update(width, height);
+    }
+
+    @Override
+    public void dispose() {
+        batch.dispose();
+        stage.dispose();
+    }
+
     public void resetDFlags() {
         dTransforming = false;
         dSelectingTransformation = false;
@@ -227,6 +366,8 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
         dLine = false;
         dCircle = false;
         dSquare = false;
+        dRectangle = false;
+        dQuadrangle = false;
         dTriangle = false;
         contaPos = 0;
         coordinates = null;
@@ -261,6 +402,12 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
 
     public void verifyInputs() {
 
+        if (Gdx.input.isKeyJustPressed(Input.Keys.F12)) {
+            if (!dShowPos)
+                dShowPos = true;
+            else
+                dShowPos = false;
+        }
 
         if (!dTerminal) {
             if (Gdx.input.isKeyPressed(Input.Keys.T)) {
@@ -309,8 +456,18 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                     dLine = true;
                     coordinates = new Float[3][2];
                 } else if (Gdx.input.isKeyJustPressed(Input.Keys.F4)) {
-                    System.out.println("S was pressed. Lets draw a square");
-                    dSquare = true;
+                    if (Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT)) {
+                        if (Gdx.input.isKeyPressed((Input.Keys.Z))) {
+                            System.out.println("S was pressed. Lets draw a square");
+                            dSquare = true;
+                        } else {
+                            System.out.println("S was pressed. Lets draw a rectangle");
+                            dRectangle = true;
+                        }
+                    } else {
+                        System.out.println("S was pressed. Lets draw a quadrangle");
+                        dQuadrangle = true;
+                    }
                     coordinates = new Float[3][4];
                 } else if (Gdx.input.isKeyJustPressed(Input.Keys.F2)) {
                     System.out.println("C was pressed. Lets draw a circle");
@@ -374,14 +531,8 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                             break;
                         case 2:
                             theta = Float.parseFloat(text.trim());
-                            objTmp = new Transformation2D().rotateFigure(objects.get(objectToTransform), theta);
-                            objects.remove(objectToTransform);
-                            objects.add(objTmp);
-
-                            transformationSelected = -1;
-                            terminalCommand = "";
-                            text = "";
-                            dTerminal = false;
+                            terminalCommand = "Clique no ponto para rotacionar em relação.";
+                            dRotating = true;
                             break;
                     }
                 } else if (dSelectingTransformation) {
@@ -478,7 +629,7 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
             }
             if (dLine) {
                 terminalCommand = "Digite as coordenadas da linha : ";
-            } else if (dSquare) {
+            } else if (dQuadrangle) {
                 terminalCommand = "Digite as coordenadas do poligono de 4 lados : ";
             } else if (dCircle) {
                 terminalCommand = "Digite as coordenadas do centro e o raio : ";
@@ -496,6 +647,8 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                     for (int i = 0; i < obj[0].length; i++) {
                         fontPos.draw(batch, df.format(obj[0][i]) + "," + df.format(obj[1][i]), obj[0][i], obj[1][i]);
                     }
+                } else {
+                    fontPos.draw(batch, "c = " + df.format(obj[0][0]) + "," + df.format(obj[1][0]) + "\nr = " + df.format(obj[0][1]), obj[0][0] - 40, obj[1][0] + 15);
                 }
             }
         }
@@ -508,6 +661,8 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                     case 2:
                         if (obj[1][1] == Float.NEGATIVE_INFINITY) {//circle
                             renderer.circle(obj[0][0], obj[1][0], obj[0][1], 256);
+                            if (dShowPos)
+                                renderer.line(obj[0][0], obj[1][0], obj[0][0] + obj[0][1], obj[1][0]);
                             //renderer.ellipse(obj[0][0], obj[1][0], obj[0][1], obj[0][1]);
                         } else {//line
                             renderer.line(obj[0][0], obj[1][0], obj[0][1], obj[1][1]);
@@ -522,7 +677,7 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
                 }
             }
         }
-        if (dLine || dTriangle || dSquare) {
+        if (dLine || dTriangle || dSquare || dQuadrangle || dRectangle) {
             if (coordinates != null)
                 for (int i = 0; i < coordinates[0].length; i++)
                     if (coordinates[0][i] != null && coordinates[1][i] != null && coordinates[0][(i + 1) % coordinates[0].length] != null && coordinates[1][(i + 1) % coordinates[0].length] != null)
@@ -534,43 +689,5 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
         }
     }
 
-    @Override
-    public void render() {
-        Gdx.gl.glClearColor(0, 0, 0, 0);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);//limpa buffer com cor limpa
 
-        verifyInputs();
-
-        stage.act();
-        stage.draw();
-
-        //Gdx.gl30.glLineWidth(1);
-        renderer.setProjectionMatrix(camera.combined);
-        renderer.begin(ShapeRenderer.ShapeType.Line);
-        renderer.setColor(0.44f, 0.44f, 0.44f, 1);
-        //renderer.line(line.get(0), line.get(1));
-
-        drawObjects();
-        renderer.end();
-
-        batch.begin();
-        writeVertexPoints();
-        fontPos.draw(batch, df.format(posX) + "," + df.format(posY), posX - 35, posY - 17);
-
-        if (dTerminal)
-            font.draw(batch, terminalCommand + text, 0, 800);
-        batch.end();
-    }
-
-    @Override
-    public void resize(int width, int height) {
-        camera.position.set(new Vector3(width / 2, height / 2, 0f));
-        stage.getViewport().update(width, height);
-    }
-
-    @Override
-    public void dispose() {
-        batch.dispose();
-        stage.dispose();
-    }
 }
