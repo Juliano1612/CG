@@ -381,7 +381,7 @@ public class CiCADa extends ApplicationAdapter implements ApplicationListener {
         for (int i = 0; i < objects.size(); i++) {
             switch (objects.get(i)[0].length) {
                 case 2:
-                    if (objects.get(i)[1][1] == Float.NEGATIVE_INFINITY) {//Circle
+                    if (objects.get(i)[1][1] == Float.NEGATIVE_INFINITY) {//circle
                         msg += "\n[" + i + "] Círculo de centro [" + objects.get(i)[0][0] + "][" + objects.get(i)[1][0] + "] e raio " + objects.get(i)[0][1];
                     } else {//line
                         msg += "\n[" + i + "] Linha de coordenadas [" + objects.get(i)[0][0] + "][" + objects.get(i)[1][0] + "] e [" + objects.get(i)[0][1] + "][" + objects.get(i)[1][1] + "]";
