@@ -18,7 +18,8 @@ public class DesktopLauncher {
 
 		//config.setWindowSizeLimits(MINWIDTH, MINHEIGHT, MAXWIDTH,MAXHEIGHT);
 		config.setTitle("CiCADa");
-		config.setMaximized(true);
+		config.setMaximized(false);
+		//config.setWindowSizeLimits(800, 600, 800, 600);
 		//config.height = 800;
 		//config.width = 1200;
 		new Lwjgl3Application(new CiCADa(), config);
